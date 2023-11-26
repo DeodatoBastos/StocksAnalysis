@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  db:
+    container_name: stocks 
+    image: postgres:12
+    ports:
+      - "54310:5432"
+    environment:
+      - POSTGRES_PASSWORD=password123
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=postgres
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata: {}
